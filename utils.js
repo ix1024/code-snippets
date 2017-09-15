@@ -300,7 +300,16 @@
 	_fn.extend($_$, _Is);
 	_fn.extend($_$, _U);
 
+	var __ = new $_$();
 
-	window.__ = new $_$();
+
+	if (typeof define === "function" && define.amd) {
+		define("__", [], function() {
+			return __;
+		});
+	} else {
+		window.__ = __;
+	}
+
 
 })(this);
