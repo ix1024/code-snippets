@@ -75,12 +75,9 @@
 			var color = 0;
 			var _unit = isMs === true ? 1000 : 1;
 			id = undefined === id ? '__time__' : id;
-			if (undefined === id || undefined === this.time[id]) {
-				result = 0; //throw '未找到相应ID';
-				return;
-			}
+
 			val = (new Date().getTime() - this.time[id]) / _unit;
-			result = '【' + id + '执行时间】➤ ' + val + (isMs === true ? 's' : 'ms') + '';
+			result = '【' + id + 'Run time】➤ ' + val + (isMs === true ? 's' : 'ms') + '';
 			if (!this.time[id + 'keep']) {
 				delete this.time[id];
 			}
