@@ -182,6 +182,9 @@
 			return newObject;
 		},
 
+		inherit: function() {
+			return this.extend.apply(this, arguments);
+		},
 
 		extend: function(Child, Parent) {
 			var F = function() {};
